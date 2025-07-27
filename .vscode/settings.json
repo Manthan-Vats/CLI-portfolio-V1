@@ -1,0 +1,9 @@
+{
+ // VS Code’s default CSS validator doesn’t recognise Tailwind directives
+ "css.validate": false,
+ "scss.validate": false,
+ "less.validate": false,
+
+ // Let the Tailwind IntelliSense extension take over
+ "tailwindCSS.emmetCompletions": true
+}

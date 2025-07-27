@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dracula theme variables (default) */
+  --theme-background: #282a36;
+  --theme-foreground: #f8f8f2;
+  --theme-cursor: #f8f8f2;
+  --theme-cursorAccent: #282a36;
+  --theme-selectionBackground: #44475a;
+  --theme-black: #21222c;
+  --theme-red: #ff5555;
+  --theme-green: #50fa7b;
+  --theme-yellow: #f1fa8c;
+  --theme-blue: #bd93f9;
+  --theme-magenta: #ff79c6;
+  --theme-cyan: #8be9fd;
+  --theme-white: #f8f8f2;
+  --theme-brightBlack: #6272a4;
+  --theme-brightRed: #ff6e6e;
+  --theme-brightGreen: #69ff94;
+  --theme-brightYellow: #ffffa5;
+  --theme-brightBlue: #d6acff;
+  --theme-brightMagenta: #ff92df;
+  --theme-brightCyan: #a4ffff;
+  --theme-brightWhite: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "SF Mono", "Monaco", "Consolas", monospace;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.4; /* Enhanced line height */
+  font-weight: 500; /* Slightly bolder base font */
+}
+
+/* Enhanced Terminal specific styles with better contrast */
+.xterm {
+  font-feature-settings: "liga" 0;
+  position: relative;
+  user-select: text;
+  -ms-user-select: text;
+  -webkit-user-select: text;
+  padding: 20px;
+  line-height: 1.4; /* Enhanced line spacing */
+  letter-spacing: 0.2px; /* Increased letter spacing */
+  font-weight: 500; /* Bolder font weight */
+}
+
+.xterm.focus,
+.xterm:focus {
+  outline: none;
+}
+
+.xterm .xterm-helpers {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.xterm .xterm-helper-textarea {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  position: absolute;
+  opacity: 0;
+  left: -9999em;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: -5;
+  white-space: nowrap;
+  overflow: hidden;
+  resize: none;
+}
+
+/* Enhanced scrollbar for terminal with better contrast */
+.xterm .xterm-viewport {
+  scrollbar-width: thin;
+  scrollbar-color: var(--theme-brightWhite) var(--theme-background);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.xterm .xterm-viewport::-webkit-scrollbar {
+  width: 16px; /* Wider scrollbar for better visibility */
+}
+
+.xterm .xterm-viewport::-webkit-scrollbar-track {
+  background: var(--theme-background);
+  border-radius: 8px;
+}
+
+.xterm .xterm-viewport::-webkit-scrollbar-thumb {
+  background: var(--theme-brightWhite);
+  border-radius: 8px;
+  border: 3px solid var(--theme-background);
+}
+
+.xterm .xterm-viewport::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-white);
+  transform: scale(1.1);
+}
+
+/* Mac-style window controls with enhanced visibility */
+.mac-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mac-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+.mac-control:hover {
+  transform: scale(1.2); /* Increased hover scale */
+  filter: brightness(1.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.mac-control:active {
+  transform: scale(0.9);
+}
+
+/* Enhanced responsive design with zoom support */
+@media (max-width: 768px) {
+  .xterm {
+    font-size: 15px; /* Larger mobile font */
+    padding: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+  }
+
+  .mac-control {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+/* Better support for browser zoom with enhanced contrast */
+@media (min-resolution: 1.5dppx) {
+  .xterm {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 600; /* Bolder on high DPI */
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  .xterm {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 600; /* Bolder on high DPI */
+  }
+}
+
+/* Enhanced typography for better readability and contrast */
+.xterm-screen {
+  font-weight: 500; /* Bolder base weight */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle text shadow for sharpness */
+}
+
+/* Enhanced animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Enhanced button hover effects */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600; /* Bolder button text */
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced loading spinner with better contrast */
+.spinner {
+  border: 3px solid var(--theme-background);
+  border-top: 3px solid var(--theme-brightWhite);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced modal styling with better contrast */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px); /* Increased blur */
+}
+
+.modal-content {
+  background-color: var(--theme-background);
+  border: 2px solid var(--theme-brightWhite); /* Brighter border */
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 420px;
+  width: 92%;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+}
+
+/* Enhanced text selection */
+.xterm-screen {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Enhanced text wrapping with better spacing */
+.xterm .xterm-rows {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  font-weight: 500; /* Bolder text */
+}
+
+/* Enhanced focus states for accessibility */
+button:focus,
+input:focus {
+  outline: 2px solid var(--theme-brightWhite);
+  outline-offset: 2px;
+}
+
+/* Enhanced selection colors */
+::selection {
+  background-color: var(--theme-brightBlue);
+  color: var(--theme-background);
+}
+
+::-moz-selection {
+  background-color: var(--theme-brightBlue);
+  color: var(--theme-background);
+}
