@@ -1,15 +1,39 @@
 export const portfolioData = {
   about:
-    "I'm a sophomore in Computer Science at Manipal University Jaipur, passionate about building scalable and impactful software solutions. My journey in tech began with competitive programming, where I honed my problem-solving skills and developed a deep appreciation for efficient algorithms. I thrive on challenges, whether it's optimizing backend systems, crafting intuitive user interfaces, or exploring the latest advancements in AI/ML. I'm always eager to learn and contribute to projects that make a real difference.",
+    "I'm a CS sophomore at Manipal University Jaipur who got hooked on programming through competitive contests. There's something addictive about solving complex problems with elegant code-C++ is my weapon of choice for these battles. But here's the thing: I don't just compete, I build. You'll find me crafting full-stack web applications when I'm not grinding LeetCode problems.Right now I'm diving deep into AI/ML and cybersecurity because honestly, that's where the most interesting challenges live. I'm not a certificate collector-I'd rather spend my time building something that actually works than chasing another badge for my LinkedIn. When a project demands a new tool or language, I learn it. Simple as that.What drives me? Real problems that need solving. The kind where you can see the impact of your work, whether it's optimizing a slow backend or designing an interface that just makes sense. Got an interesting challenge? I'm all ears.",
 
   skills: {
     Technical: {
-      Frontend: ["React", "Next.js", "HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Redux"],
-      Backend: ["Node.js", "Express.js", "Python", "Flask", "Django", "RESTful APIs", "GraphQL"],
+      Frontend: [
+        "React",
+        "Next.js",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Tailwind CSS",
+        "Redux",
+      ],
+      Backend: [
+        "Node.js",
+        "Express.js",
+        "Python",
+        "Flask",
+        "Django",
+        "RESTful APIs",
+        "GraphQL",
+      ],
       Databases: ["MongoDB", "PostgreSQL", "MySQL", "Firebase"],
       Languages: ["JavaScript", "Python", "C++", "Java", "Go"],
     },
-    "Tools & Platforms": ["Git", "GitHub", "Docker", "Kubernetes", "AWS", "Linux", "VS Code"],
+    "Tools & Platforms": [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Linux",
+      "VS Code",
+    ],
     "Competitive Programming": {
       Profiles: ["Codeforces", "LeetCode"],
       Ratings: ["Expert (1600+)", "Contest Rating 2000+"],
@@ -21,15 +45,26 @@ export const portfolioData = {
 
   projects: [
     {
-      name: "CLI-Portfolio",
-      description: "This very portfolio, showcasing a unique terminal-style interface built with React and Xterm.js.",
+      name: "GraphWay Simulator",
+      description:
+        "See how pathfinding algorithms actually work instead of just reading about them",
+      problem:
+        "Learning graph algorithms from textbooks sucks. You can't see what's happening step by step",
+      solution:
+        "Draw graphs with your mouse, pick an algorithm, and watch it find the shortest path in real-time. Like seeing how your GPS thinks",
+      tech: ["React", "TypeScript", "Zustand", "Vite"],
       github: "https://github.com/manthan/cli-portfolio",
       demo: "https://cli-portfolio.vercel.app",
     },
     {
-      name: "E-commerce-API",
+      name: "FractalLoom",
       description:
-        "A robust RESTful API for an e-commerce platform, built with Node.js, Express, and MongoDB. Includes user authentication, product management, and order processing.",
+        "Create mathematical art using eight simple sliders - no math degree required",
+      problem:
+        "Fractals look amazing but the math behind them is scary. Most people never get to play with them",
+      solution:
+        "Eight sliders control everything. Move one and watch a tree turn into a spiral. Move another and suddenly you've got alien geometry",
+      tech: ["React", "TypeScript", "React Router", "Tailwind CSS"],
       github: "https://github.com/manthan/ecommerce-api",
       demo: "N/A",
     },
@@ -57,11 +92,25 @@ export const portfolioData = {
   ],
 
   updates: [
-    { date: "[2025-07-15]", activity: "Launched CLI-Portfolio v1.0! Check out the new terminal experience." },
-    { date: "[2025-07-10]", activity: 'Completed "Full Stack Web Development" course on Coursera.' },
-    { date: "[2025-06-28]", activity: "Contributed to open-source project 'Awesome-DevTools' on GitHub." },
+    {
+      date: "[2025-07-15]",
+      activity:
+        "Launched CLI-Portfolio v1.0! Check out the new terminal experience.",
+    },
+    {
+      date: "[2025-07-10]",
+      activity: 'Completed "Full Stack Web Development" course on Coursera.',
+    },
+    {
+      date: "[2025-06-28]",
+      activity:
+        "Contributed to open-source project 'Awesome-DevTools' on GitHub.",
+    },
     { date: "[2025-06-20]", activity: "Achieved Expert rating on Codeforces." },
-    { date: "[2025-06-05]", activity: 'Presented "AI in Healthcare" at university tech fest.' },
+    {
+      date: "[2025-06-05]",
+      activity: 'Presented "AI in Healthcare" at university tech fest.',
+    },
   ],
 
   education: {
@@ -89,4 +138,4 @@ export const portfolioData = {
       Email: "mailto:manthan.dev@example.com",
     },
   },
-}
+};
