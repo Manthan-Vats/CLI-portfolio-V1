@@ -63,7 +63,7 @@ export default function TerminalCore({ currentTheme, themes, setTheme }: Termina
         selectionBackground: themes[currentTheme].selectionBackground,
       },
       fontFamily: "SF Mono, Monaco, Consolas, monospace",
-      fontSize: 16,
+      fontSize: typeof window !== 'undefined' && window.innerWidth < 768 ? 11 : 14,
       lineHeight: 1.4,
       cursorBlink: true,
       allowTransparency: true,
@@ -298,7 +298,7 @@ export default function TerminalCore({ currentTheme, themes, setTheme }: Termina
   return (
     <div
       ref={terminalRef}
-      className="w-full h-full"
+      className="w-full h-full overflow-x-hidden"
       style={{ minHeight: '100%', minWidth: '100%' }}
     />
   )
