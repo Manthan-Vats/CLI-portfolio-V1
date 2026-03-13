@@ -31,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <link rel="icon" href="/images/logo_2.png" type="image/png" />
         {/* Preload Fira Code font */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
