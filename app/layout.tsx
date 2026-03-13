@@ -1,40 +1,38 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/contexts/theme-context"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/contexts/theme-context";
 
 // Optimize font loading
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  display: 'swap', // Improve font loading performance
+  display: "swap", // Improve font loading performance
   preload: true,
-  variable: '--font-inter'
-})
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
-  title: "MANTHAN - Dual Mode Portfolio",
-  description: "A unique dual-mode portfolio featuring CLI-style terminal and modern GUI interfaces",
-  generator: 'v0.dev',
+  title: "Manthan Vats — Portfolio",
+  description:
+    "A unique dual-mode portfolio featuring CLI-style terminal and modern GUI interfaces",
+  generator: "v0.dev",
   // Add performance hints
   other: {
-    'theme-color': '#282a36',
-  }
-}
+    "theme-color": "#282a36",
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
         {/* Preload Fira Code font */}
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
@@ -88,5 +86,5 @@ export default function RootLayout({
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
